@@ -6,7 +6,7 @@
 /*   By: asouchet <asouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:45:26 by asouchet          #+#    #+#             */
-/*   Updated: 2023/01/18 15:43:59 by asouchet         ###   ########.fr       */
+/*   Updated: 2023/02/09 14:48:57 by asouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,15 @@
 
 typedef struct s_list_nb {
 	int		data;
-	int		index;
 	struct s_list_nb	*next;
 }				t_list_nb;
+
+typedef	struct s_env {
+	t_list_nb	*a;
+	t_list_nb	*b;
+	int			action;
+}				t_env;
+
 
 int					handle_error(int ac, char **av);
 int					ft_is_it_unique(char **av);
@@ -47,7 +53,40 @@ t_list_nb 			*create_list(int data);
 void 				print_list(t_list_nb *l);
 
 // CREE LA PILE A ET B
-t_list_nb			*create_pile_a(char **av);
+t_list_nb			*create_pile(char **av, int a);
+t_list_nb			*ft_lst_new(int content);
+void				ft_lst_add_back(t_list_nb **lst, t_list_nb *new);
+t_list_nb			*ft_lst_last(t_list_nb *lst);
+void				ft_lst_add_front(t_list_nb **lst, t_list_nb *new);
+int					lst_len(t_list_nb *list);
+
+// SORT UTILS
+void				sa(t_env *env);
+void				sb(t_env *env);
+void				ss(t_env *env);
+void				pa(t_env *env);
+void				pb(t_env *env);
+void				rrr(t_env *env);
+void				rr(t_env *env);
+void				ra(t_env *env);
+void				rra(t_env *env);
+void				rb(t_env *env);
+void				rrb(t_env *env);
+
+// ALGORYTHME UTILS
+int					x_min(t_list_nb *list, int x);
+int					secund_min(t_list_nb *pile, int first_min);
+int					data_min(t_list_nb *pile, int min);
+
+// ALGO
+void				sort(t_env *env);
+int					sort_case(t_env *env);
+void				sort_3(t_env *env);
+
+
+
+
+
 
 
 #endif

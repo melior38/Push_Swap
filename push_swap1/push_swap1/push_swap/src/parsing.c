@@ -6,7 +6,7 @@
 /*   By: asouchet <asouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 13:39:32 by asouchet          #+#    #+#             */
-/*   Updated: 2023/01/18 12:50:20 by asouchet         ###   ########.fr       */
+/*   Updated: 2023/02/03 16:09:46 by asouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,20 +81,6 @@ int	ft_is_it_unique(char **av)
 	return (0);
 }
 
-int	min_max_check(char **av)
-{
-	int	i;
-
-	i = 1;
-	while (av[i])
-	{
-		if (ft_atoi(av[i]) == '\0')
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
 void	error(void)
 {
     write(2, "Error\n", 6);
@@ -104,20 +90,24 @@ void	error(void)
 int	tester(char **av)
 {
 		if (ft_isdigit_in_str(av))
+		{
+			printf("1");
 			error();
+		}
 		if (ft_is_it_unique(av))
+		{
+			printf("2");
 			error();
-		if (min_max_check(av))
-			error();
+		}
 		return 0;
 }
 
 int handle_error(int ac, char **av)
 {
-    int i;
+    // int i;
 	char *tmp;
 
-    i = 0;
+    // i = 0;
     if (ac == 1)
         error();
 	else if (ac == 2)

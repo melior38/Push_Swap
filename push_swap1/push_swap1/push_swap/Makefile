@@ -6,7 +6,7 @@
 #    By: asouchet <asouchet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/27 02:15:22 by trubat-d          #+#    #+#              #
-#    Updated: 2023/01/18 15:28:11 by asouchet         ###   ########.fr        #
+#    Updated: 2023/02/05 15:09:29 by asouchet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RESETTXT = \033[0m
 BOLD = \033[1m
 
 SRC_PATH = src/
-SRC = parsing.c list_utils.c list.c
+SRC = parsing.c list_utils.c list.c sort_utils.c algorythme_utils.c main.c algorythme.c
 SRCS = $(addprefix $(SRC_PATH),$(SRC))
 
 OBJ_PATH = obj/

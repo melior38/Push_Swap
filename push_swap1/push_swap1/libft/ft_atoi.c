@@ -6,11 +6,17 @@
 /*   By: asouchet <asouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 09:39:30 by asouchet          #+#    #+#             */
-/*   Updated: 2023/01/16 17:23:14 by asouchet         ###   ########.fr       */
+/*   Updated: 2023/02/03 16:09:14 by asouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_error(void)
+{
+    write(2, "Error\n", 6);
+    exit(EXIT_FAILURE);
+}
 
 int	ft_atoi(const char *str)
 {
@@ -36,7 +42,7 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	if (!max_min_checker(res * (long)neg))
-		return ('\0');
+		ft_error();
 	return ((int)res * neg);
 }
 
