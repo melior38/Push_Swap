@@ -6,7 +6,7 @@
 /*   By: asouchet <asouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 15:08:26 by asouchet          #+#    #+#             */
-/*   Updated: 2023/02/05 17:23:20 by asouchet         ###   ########.fr       */
+/*   Updated: 2023/02/23 16:13:13 by asouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,32 +71,41 @@ void	sort_3(t_env *env)
 			sa(env);
 		}
 	}
-	else 
+	else
 	{
 		if (env->a->next->data == min)
 			sa(env);
 		else
-		{
 			rra(env);
-		}
 	}
 }
 
-void	sort_100(t_env *env)
+void    sort_100(t_env *env)
 {
-	int l_len;
-	int chunk;
-	t_list_nb	*tmp;
+	t_setup		set;
+    t_list_nb	*tmp;
 
-	tmp = env->a;
-	l_len = lst_len(env->a);
-	chunk = l_len / 4;
-	l_len = 0;
-	while (chunk >= l_len++) // tu peut deja penser a une opti du genre si on se trouve a + de la moitier de la liste ou pas
-	{
-		
-	}
-
+// setup une struct qui prend en save la liste pour les chunk 
+    tmp = env->a;
+    set.chunk = lst_len(env->a);
+    chunk = l_len / 4;
+    chunk_value = x_min(env->a, 25); // faudrait une fonction qui s'occupe de setup tout ce qu'il faut a un moment t
+    l_len = 0;
+    
+    while (chunk >= l_len++) // tu peut deja penser a une opti du genre si on se trouve a + de la moitier de la liste ou pas == mid_upper_chunk
+    {
+        if (env->a->data <=)
+        {
+            if (env->a->data )
+                pb(env);
+            else
+            {
+                pb(env);
+                rrb(env);
+            }
+        }
+        ra(env);
+    }
 }
 
 // void	sort_300(t_env *env)

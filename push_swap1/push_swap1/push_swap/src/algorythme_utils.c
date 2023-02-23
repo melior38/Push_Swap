@@ -6,7 +6,7 @@
 /*   By: asouchet <asouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:31:30 by asouchet          #+#    #+#             */
-/*   Updated: 2023/02/05 17:06:06 by asouchet         ###   ########.fr       */
+/*   Updated: 2023/02/23 12:17:51 by asouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,4 +106,25 @@ int	x_min(t_list_nb *list, int x) // donne le nieme plus petit
 		i++;
 	}
 	return (min);
+}
+
+void	mid_upper_chunk(t_env *env ,t_list_nb l, int data)
+{
+	int	mid;
+	int	count;
+	t_list_nb tmp;
+
+	tmp = l;
+	count = 0;
+	mid = lst_len(l) / 2;
+	if (l.data != data && l)
+	{
+		count++;
+		l = l.next;
+	}
+	l = tmp;
+	if (count > mid)
+		rra(env);
+	else
+		ra(env);
 }

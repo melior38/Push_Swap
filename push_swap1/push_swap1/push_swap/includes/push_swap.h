@@ -6,7 +6,7 @@
 /*   By: asouchet <asouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:45:26 by asouchet          #+#    #+#             */
-/*   Updated: 2023/02/09 14:48:57 by asouchet         ###   ########.fr       */
+/*   Updated: 2023/02/23 16:13:20 by asouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,12 @@ typedef	struct s_env {
 	t_list_nb	*b;
 	int			action;
 }				t_env;
+
+typedef struct s_setup {
+	int	chunk_data;
+	int	pivot;
+	int	chunk;
+}				t_setup;
 
 
 int					handle_error(int ac, char **av);
@@ -77,6 +83,7 @@ void				rrb(t_env *env);
 int					x_min(t_list_nb *list, int x);
 int					secund_min(t_list_nb *pile, int first_min);
 int					data_min(t_list_nb *pile, int min);
+void				mid_upper_chunk(t_env *env ,t_list_nb l, int data);
 
 // ALGO
 void				sort(t_env *env);
