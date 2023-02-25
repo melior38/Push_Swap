@@ -6,7 +6,7 @@
 /*   By: asouchet <asouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:45:26 by asouchet          #+#    #+#             */
-/*   Updated: 2023/02/24 17:43:03 by asouchet         ###   ########.fr       */
+/*   Updated: 2023/02/25 12:59:57 by asouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,18 @@ typedef struct s_list_nb {
 	struct s_list_nb	*next;
 }				t_list_nb;
 
-typedef	struct s_env {
-	t_list_nb	*a;
-	t_list_nb	*b;
-	int			action;
-	t_setup		*set;
-}				t_env;
-
 typedef struct s_setup {
 	int	chunk_data;
 	int	pivot;
 	int	chunk_size;
 }				t_setup;
+
+typedef	struct s_env {
+	t_list_nb	*a;
+	t_list_nb	*b;
+	int			action;
+	t_setup		set;
+}				t_env;
 
 
 int					handle_error(int ac, char **av);
@@ -89,13 +89,13 @@ int					secund_min(t_list_nb *pile, int first_min);
 int					data_min(t_list_nb *pile, int min);
 void				mid_upper_chunk(t_env *env ,t_list_nb *l, int range);
 void				r_data(t_env *env, int data, int type);
-void				set_t_setup(t_setup *set,t_list_nb *list, int divident);
+void				set_t_setup(t_env *env, int divident);
 
 // ALGO
 // void				sort(t_env *env);
 int					sort_case(t_env *env);
 void				sort_3(t_env *env);
-
+void    			sort_100(t_env *env);
 
 
 

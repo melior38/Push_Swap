@@ -6,7 +6,7 @@
 /*   By: asouchet <asouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 22:39:12 by asouchet          #+#    #+#             */
-/*   Updated: 2023/02/05 16:52:03 by asouchet         ###   ########.fr       */
+/*   Updated: 2023/02/25 12:40:04 by asouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int	main(int ac, char **av)
 	}
 	// pb(&env);
 	// pb(&env);
-	sort_3(&env);
+	set_t_setup(&env, 1);
+	sort_100(&env);
 
 	// print_list(pile_a);
 	// printf("le 6eme plus petit[%d]\n", x_min(pile_a, 5));

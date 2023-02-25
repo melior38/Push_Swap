@@ -6,7 +6,7 @@
 /*   By: asouchet <asouchet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 17:31:30 by asouchet          #+#    #+#             */
-/*   Updated: 2023/02/24 17:42:38 by asouchet         ###   ########.fr       */
+/*   Updated: 2023/02/25 13:00:16 by asouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,9 +145,13 @@ void	mid_upper_chunk(t_env *env ,t_list_nb *l, int range)
 		r_data(env, range, RA);
 }
 
-void	set_t_setup(t_setup *set, t_list_nb *list, int divident)
+void	set_t_setup(t_env *env, int divident)
 {
-	set->chunk_size = lst_len(list) / divident;
-	set->chunk_data = x_min(list, set->chunk_size);
-	set->pivot = x_min(list, set->chunk_size / 2);
+	t_setup	tmp;
+
+
+	tmp.chunk_size = lst_len(env->a) / divident;
+	tmp.chunk_data = x_min(env->a, tmp.chunk_size);
+	tmp.pivot = x_min(env->a, tmp.chunk_size / 2);
+	env->set = tmp;
 }
